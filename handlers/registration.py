@@ -57,7 +57,6 @@ async def reg_surname(message: Message, state: FSMContext):
 @dp.message(register.patronymic)
 async def reg_age(message: Message, state: FSMContext):
     await state.update_data(patronymic = message.text)
-    db.bormi_birth()
     await message.answer("Yaxshi, endi rasmingizni yuboring")
     await state.set_state(register.rasm)
 

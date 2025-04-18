@@ -35,11 +35,6 @@ class Database():
         self.cursor.execute(sql, (id_,))
         self.connect.commit()
 
-    def bormi_birth(self, name, surname, patronymic):
-        sql = """SELECT * FROM users WHERE name = ? AND surname = ? AND patronymic = ?;"""
-        self.cursor.execute(sql, (name, surname, patronymic,))
-        return self.cursor.fetchall()
-
     def bormi(self, user_id):
         print(user_id)
         sql = """SELECT * FROM users WHERE user_id = ?"""
