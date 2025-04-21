@@ -26,7 +26,7 @@ dp.callback_query.middleware(CallbackLoggerMiddleware())
 scheduler = AsyncIOScheduler()
 
 async def start_scheduler(bot):
-    scheduler.add_job(check_birthdays, "cron", hour=16, minute=4, args=[bot])
+    scheduler.add_job(check_birthdays, "cron", hour=0, minute=0, args=[bot])
     scheduler.start()
     await asyncio.Event().wait()  # Keeps the event loop running
 
